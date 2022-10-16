@@ -1,1 +1,1 @@
-# how_to_install_moodle_on_ubuntu
+# How To Install Moodle with Postgres, Nginx and PHP on an Ubuntu
