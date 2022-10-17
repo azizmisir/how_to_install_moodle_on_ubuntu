@@ -76,7 +76,7 @@ date.timezone = CET
 sudo nano /etc/php/7.4/fpm/pool.d/www.conf
 ```
 
-``ẁww.conf
+```www.conf
 security.limit_extensions = .php
 ```
 
@@ -109,4 +109,25 @@ server {
 sudo nginx -t &&
 sudo systemctl restart php7.4-fpm  &&
 sudo systemctl restart nginx  
+```
+## Step 4: Moodle Web Installer
+
+```web
+ http://yourdomain/moodle
+ ```
+## Step 5: Https & Let’s Encrypt SSL
+```command
+sudo apt install python3-certbot-nginx
+```
+
+```command
+sudo certbot --nginx -d yourdomain
+```
+
+```command
+sudo nano /var/www/html/moodle/config.php
+```
+
+```config.php
+$CFG->wwwroot   = 'https://www.example.com/';
 ```
